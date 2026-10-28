@@ -1,8 +1,8 @@
-package Input.PlayerActions;
+package Input;
 
 import Entities.Player.GamePlayer;
 
-public interface PlayerActions {
+public interface GameCommands {
 
 	public void execute(GamePlayer player);
 	

@@ -1,6 +1,7 @@
 package Principal;
 
 import PlayerInput.GameKeyboardInput;
+import Principal.Managers.CommandManager;
 import Principal.Managers.EntityManager;
 import Principal.Managers.InputManager;
 import Principal.Managers.PlayerManager;
@@ -26,9 +27,10 @@ public class GameLoop {
 	private GameWindow window;
 	
 	// Managers
+	private InputManager inputM;
 	private PlayerManager playerM;
 	private EntityManager entityM;
-	private InputManager inputM;
+	private CommandManager commandM;
 	
 	// Inputs
 	private GameKeyboardInput keyboardI;
@@ -42,9 +44,10 @@ public class GameLoop {
 		this.keyboardI = new GameKeyboardInput();
 				
 		// Managers
+		this.inputM = new InputManager(this.keyboardI);
 		this.playerM = new PlayerManager();
 		this.entityM = new EntityManager();
-		this.inputM = new InputManager(this.keyboardI);
+		this.commandM = new CommandManager(this.inputM, this.playerM);
 		
 		// window
 		this.panel = new GamePanel(this.playerM, this.entityM, this.keyboardI);
@@ -130,7 +133,15 @@ public class GameLoop {
 			Método que atualiza a lógica de movimentação do jogador
 			e a inteligência artificial dos inimigos.
 		*/
-		this.playerM.updatePlayer(this.inputM.getActionsForPressedKeys());
-		this.entityM.updateEntities();
+		
+		// ENTRADAS DO JOGADOR
+		this.commandM.playerInputUpdate();
+		
+		// CÉREBRO DO PLAYER
+		this.playerM.getPlayer().updatePlayerLogic();
+		
+		// IA de entidades
+		//this.entityM.updateEntities();
 	}
+
 }

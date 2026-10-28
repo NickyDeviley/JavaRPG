@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import Input.PlayerActions.PlayerActions;
-import Input.PlayerActions.WalkCharacter.WalkDown;
-import Input.PlayerActions.WalkCharacter.WalkLeft;
-import Input.PlayerActions.WalkCharacter.WalkRight;
-import Input.PlayerActions.WalkCharacter.WalkUp;
+import Input.GameCommands;
+import Input.Game.CloseGame;
+import Input.PlayerActions.MovementCharacter.Run;
+import Input.PlayerActions.MovementCharacter.WalkDown;
+import Input.PlayerActions.MovementCharacter.WalkLeft;
+import Input.PlayerActions.MovementCharacter.WalkRight;
+import Input.PlayerActions.MovementCharacter.WalkUp;
 import PlayerInput.GameKeyboardInput;
 
 public class InputManager {
@@ -21,7 +23,7 @@ public class InputManager {
 	// Pendências
 	private GameKeyboardInput keyboardI;
 	
-	private Map<Integer, PlayerActions> keyMap;
+	private Map<Integer, GameCommands> keyMap;
 	
 	public InputManager (GameKeyboardInput keyboardI)
 	{
@@ -31,10 +33,10 @@ public class InputManager {
 		assignKeys();
 	}
 	
-	public ArrayList<PlayerActions>
+	public ArrayList<GameCommands>
 	getActionsForPressedKeys ()
 	{
-		ArrayList<PlayerActions> actions = new ArrayList<>();
+		ArrayList<GameCommands> actions = new ArrayList<>();
 	
 		for (int i = 0; i < 256; ++i)
 		{
@@ -43,10 +45,15 @@ public class InputManager {
 				actions.add(this.keyMap.get(i));
 			}
 		}
-		
 		return actions;
 	}
-		
+	
+	public ArrayList<GameCommands>
+	getCommands()
+	{
+		return null;
+	}
+	
 	private void
 	assignKeys()
 	{
@@ -58,8 +65,15 @@ public class InputManager {
 		this.keyMap.put(KeyEvent.VK_A, new WalkLeft());
 		this.keyMap.put(KeyEvent.VK_D, new WalkRight());
 		
+		// RUN
+		this.keyMap.put(KeyEvent.VK_SHIFT, new Run());
+		
+//		System.out.println("Shift: " + KeyEvent.VK_SHIFT);
+//		System.out.println("Baixo: " + KeyEvent.VK_S);
+//		System.out.println("Direita: " + KeyEvent.VK_D);
+		
 	// GAME
-		this.keyMap.put(null, null);
+		//this.keyMap.put(KeyEvent.VK_ESCAPE, new CloseGame());
 		
 	}
 	

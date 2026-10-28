@@ -38,7 +38,6 @@ public class GameKeyboardInput implements KeyListener {
 		}	
 	}
 
-	
 	public boolean[] getKeys() { return this.keys; }
 	
 }

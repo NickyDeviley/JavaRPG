@@ -11,8 +11,7 @@ public class Main {
 	{
 
 		GameLoop game = new GameLoop();
-		
-		
+
 	}
 	
 }

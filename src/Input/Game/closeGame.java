@@ -1,12 +1,16 @@
 package Input.Game;
 
-public class closeGame implements GameCommands {
+import Entities.Player.GamePlayer;
+import Input.GameCommands;
+import Principal.GameLoop;
+
+public class CloseGame implements GameCommands {
 
 	@Override
 	public void 
-	execute() 
+	execute(GamePlayer player) 
 	{
-		// Lógica para fechar o jogo
+		//GameLoop.closeGame();
 	}
 
 }

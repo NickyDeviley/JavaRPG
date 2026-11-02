@@ -2,17 +2,15 @@ package PlayerInput;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
-import Principal.Managers.InputManager;
+import java.util.ArrayList;
 
 public class GameKeyboardInput implements KeyListener {
 	
-	private int size = 256;
-	private boolean[] keys;
+	private ArrayList<Integer> keys;
 	
 	public GameKeyboardInput()
 	{
-		this.keys = new boolean[size];
+		this.keys = new ArrayList<Integer>();
 	}
 	
 	@Override
@@ -22,9 +20,10 @@ public class GameKeyboardInput implements KeyListener {
 	public void 
 	keyPressed(KeyEvent e) 
 	{
-		if (e.getKeyCode() < size)
+		Integer pressedKey = e.getKeyCode();
+		if (!this.keys.contains(pressedKey))
 		{
-			keys[e.getKeyCode()] = true;
+			this.keys.add(pressedKey);
 		}
 	}
 
@@ -32,12 +31,10 @@ public class GameKeyboardInput implements KeyListener {
 	public void 
 	keyReleased(KeyEvent e) 
 	{	
-		if (e.getKeyCode() < size)
-		{
-			keys[e.getKeyCode()] = false;
-		}	
+		Integer releasedKey = e.getKeyCode();
+		this.keys.remove(releasedKey);
 	}
 
-	public boolean[] getKeys() { return this.keys; }
+	public ArrayList<Integer> getKeys() { return this.keys; }
 	
 }

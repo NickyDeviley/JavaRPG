@@ -36,13 +36,18 @@ public class InputManager {
 	public ArrayList<GameCommands>
 	getActionsForPressedKeys ()
 	{
+		ArrayList<Integer> keysPressed = this.keyboardI.getKeys();
 		ArrayList<GameCommands> actions = new ArrayList<>();
 	
-		for (int i = 0; i < 256; ++i)
+		for (int i = 0; i < keysPressed.size(); ++i)
 		{
-			if (this.keyboardI.getKeys()[i])
+			if (this.keyMap.get(keysPressed.get(i)) == null)
 			{
-				actions.add(this.keyMap.get(i));
+				continue;
+			}
+			else 
+			{
+				actions.add(this.keyMap.get(keysPressed.get(i)));
 			}
 		}
 		return actions;

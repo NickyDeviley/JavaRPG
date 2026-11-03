@@ -1,6 +1,0 @@
-0;Grama;0;0;
-1;Gramado;16;0;
-2;Pedra;32;0;COLLIDABLE
-3;Arvore;48;0;COLLIDABLE
-4;Agua;80;32;COLLIDABLE
-5;Tijolo;96;32;COLLIDABLE

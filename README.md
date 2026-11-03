@@ -14,17 +14,21 @@ Abaixo segue a lista de algoritmos e sistemas de jogos que foram implementados n
 
 **Movimentação**: Um sistema capaz de receber, tratar e responder às entradas do usuário do teclado.
 
+**Tiles**: Sistema de tiles e mundo quase completo, por enquanto possuindo apenas um mundo e renderizando 6 tipos de tiles diferentes.
+
+**Câmera**: A câmera que permite a movimentação do jogador pelo mapa do jogo e um sistema de otimização que apenas renderiza os tiles que estão dentro do limite da tela.
+
 ## Próxima implementação
 
-Planejo implementar posteriormente um sistema de tiles, em que o jogo irá ler um arquivo de texto formado apenas por números e espaços, onde cada número representará um tile distinto que será renderizado. Além disso, utilizarei *Fly-weight Pattern* para diminuir o custo da memória com a criação dos objetos que representaram os Tiles, instanciando apenas um de cada na memória e reutilizando esse único objeto. Inicialmente utilizando apenas quadrados coloridos e seguidamente desenvolver uma arte apropriada para o jogo.
-
-O sistema de câmera foi iniciado, mas só pode ser finalizado após a renderização do mapa.
+Próximo passo é finalizar os Sprites do jogador e adicionar colisões nos tiles.
 
 ## Estado atual
 
-Consertado o sistema de movimentação do jogador, em que a corrida era sobreposta pelos próximos comandos de movimento. Agora o jogador possui um estado primário e um secundário, onde o primário trata-se de comportamentos concretos, que modificam diretamente atributos do jogador ou realizam ações, enquanto o estado secundário funciona como um suporte ao primeiro estado, modificando a maneira como ele é executado.
+![Progress Image](./ProgressPics/JavaGameEngine_TileSystem001.png)
 
-Também foi consertado o sistema de entradas, que causava uma exceção "NullPointerException" caso o usuário pressionasse alguma tecla que não estivesse mapeada em alguma ação. Agora utilizando uma ArrayList que registra o código de todas as teclas pressionadas. Agora a última tecla pressionada se sobressai em relação as outras. Evitando que os botões funcionem apenas em uma ordem específica.
+Foi implementado de forma semi-finalizada o sistema de tiles no jogo, onde os arquivos com as informações de cada tile é carregado no código, o spritesheet é carregado, redimensionado e recortado. Então o código lê o arquivo que representa o mapa do jogo, formado por vários números em sequência (50x50), e então os tiles são instanciados na memória e renderizados na tela em suas devida posições, definida pelo ID de cada tile.
+
+Também foi implementado o sistema da câmera, onde o jogador pode se mover pelo mapa, além de um sistema de otimização que apenas renderiza os tiles que aparecem na tela.
 
 ## Diagrama de Classe:
 

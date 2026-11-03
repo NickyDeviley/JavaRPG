@@ -24,7 +24,7 @@ Próximo passo é finalizar os Sprites do jogador e adicionar colisões nos tile
 
 ## Estado atual
 
-![Progress Image](./ProgressPics/JavaGameEngine_TileSystem001.png)
+![Progress Image](./ProgressPics/JavaGameEngine_TileSystem001.PNG)
 
 Foi implementado de forma semi-finalizada o sistema de tiles no jogo, onde os arquivos com as informações de cada tile é carregado no código, o spritesheet é carregado, redimensionado e recortado. Então o código lê o arquivo que representa o mapa do jogo, formado por vários números em sequência (50x50), e então os tiles são instanciados na memória e renderizados na tela em suas devida posições, definida pelo ID de cada tile.
 

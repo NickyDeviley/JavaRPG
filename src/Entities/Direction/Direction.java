@@ -1,4 +1,4 @@
-package Entities.util;
+package Entities.Direction;
 
 public enum Direction {
 

@@ -1,14 +1,13 @@
-package Input.Game;
+package Commands.Game;
 
+import Commands.GameCommands;
 import Entities.Player.GamePlayer;
-import Input.GameCommands;
-import Principal.GameLoop;
 
 public class CloseGame implements GameCommands {
 
 	@Override
-	public void 
-	execute(GamePlayer player) 
+	public void
+	execute(GamePlayer player)
 	{
 		//GameLoop.closeGame();
 	}

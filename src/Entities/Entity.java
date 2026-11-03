@@ -1,12 +1,12 @@
 package Entities;
 
-import Entities.util.Direction;
+import Entities.Direction.Direction;
 
 public abstract class Entity {
 	/**
 		Classe molde para as entidades
 	*/
-	
+
 	protected int ID;
 	protected String name;
 	protected short life;
@@ -14,7 +14,7 @@ public abstract class Entity {
 	protected int worldPositionX;
 	protected int worldPositionY;
 	protected Direction actualDirection;
-	
+
 	public Entity(int ID, String name, short life, byte speed, int worldPositionX, int worldPositionY)
 	{
 		this.ID = ID;
@@ -26,7 +26,7 @@ public abstract class Entity {
 	}
 
 	public int getID() { return this.ID; }
-	
+
 	public String getName() { return name; }
 	public void setName(String name) { this.name = name; }
 

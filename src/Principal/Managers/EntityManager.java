@@ -8,17 +8,17 @@ public class EntityManager {
 	*/
 	public EntityManager()
 	{
-		
+
 	}
-	
-	public void 
+
+	public void
 	drawEntities(Graphics2D pencil)
 	{
-		
 
-		
+
+
 	}
-	
+
 	public void
 	updateEntities()
 	{
@@ -26,7 +26,7 @@ public class EntityManager {
 		  	Método que gerencia da inteligência artificial dos
 		  	personagens e inimigos do jogo
 		*/
-		
-		
+
+
 	}
 }

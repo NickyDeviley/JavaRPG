@@ -5,12 +5,15 @@ import Entities.Player.GamePlayer;
 public enum States {
 
 	// FIRST STATS
-	IDLE { public void update(GamePlayer player) { player.idleState(); }},
-	WALK { public void update(GamePlayer player) { player.movePlayer(); }},
-	
+	IDLE { @Override
+	public void update(GamePlayer player) { player.idleState(); }},
+	WALK { @Override
+	public void update(GamePlayer player) { player.movePlayer(); }},
+
 	// SECOND STATS
-	RUNNING { public void update(GamePlayer player) {}};
-													  
-	
+	RUNNING { @Override
+	public void update(GamePlayer player) {}};
+
+
 	public abstract void update(GamePlayer player);
 }

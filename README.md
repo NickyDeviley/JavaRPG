@@ -40,15 +40,15 @@ Também foi consertado o sistema de entradas, que causava uma exceção "NullPoi
 
 ✅ Adicionar movimento ao quadrado via input;
 
-❌ Sistema de Câmera
+✅ Sistema de Câmera
 
-❌ Carregar configurações de tiles via txt;
+✅ Carregar configurações de tiles via txt;
 
-❌ Instanciar e renderizar blocos;
+✅ Instanciar e renderizar blocos;
 
-❌ Carregar mapa via txt;
+✅ Carregar mapa via txt;
 
-❌ Carregar Assets;
+✅ Carregar Assets dos tiles;
 
 ❌ Inimigos;
 
